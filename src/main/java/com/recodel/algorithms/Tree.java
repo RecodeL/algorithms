@@ -1,6 +1,6 @@
-package com.recodejl.algorithms;
+package com.recodel.algorithms;
 
-import com.recodejl.common.Node;
+import com.recodel.common.Node;
 
 public class Tree {
     public static void dfsPreorder(Node root){

@@ -1,4 +1,4 @@
-package com.recodejl.common;
+package com.recodel.common;
 
 public class Node {
     // mark all attributes as public for simplicity, ideally they should be in setters
