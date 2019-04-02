@@ -3,27 +3,28 @@ package com.recodel.algorithms;
 import com.recodel.common.Node;
 
 public class Tree {
-    public static void dfsPreorder(Node root){
+    public static void dfsPreorder(Node root) {
         if (root == null) return;
         System.out.println(root.letter + ": " + root.percent);
         dfsPreorder(root.left);
         dfsPreorder(root.right);
     }
 
-    public static void getLineage(Node root, double percent){
+    public static void getLineage(Node root, double percent) {
         if (root == null) return;
         // System.out.println(root.letter + ": " + root.percent);
-        if(root.left != null) {
+        if (root.left != null) {
             System.out.println("Child: " + root.left.letter + " Ownership: " + percent * 100 + "%");
             getLineage(root.left, percent * root.left.percent);
         }
-        if(root.right != null) {
+        if (root.right != null) {
             System.out.println("Child: " + root.right.letter + " Ownership: " + percent * 100 + "%");
             getLineage(root.right, percent * root.right.percent);
         }
         // getLineage(root.right);
     }
-    public static void lineage(Node root){
+
+    public static void lineage(Node root) {
         if (root == null) return;
         System.out.println(root.letter);
         getLineage(root, root.percent);
@@ -40,8 +41,9 @@ public class Tree {
 
         // lineage(root.right);
     }
+}
 
-
+class TreeDemo {
     public static void main(String[] args) {
         // Node root = new Node(100, 'A');
         Node
@@ -61,12 +63,15 @@ public class Tree {
        e  f
 //
 //        */
-        a.left = b; a.right = c;
+        a.left = b;
+        a.right = c;
         b.left = d;
-        d.left = e; d.right = f;
+        d.left = e;
+        d.right = f;
         c.left = g;
-        lineage(a);
+        Tree.lineage(a);
         // dfsPreorder(a);
         // System.out.println("Hello World!");
     }
 }
+
